@@ -16,6 +16,7 @@ function About() {
   return (
     <div className="flex min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
       <div className="flex flex-col w-full p-4">
+        <div className="border-b-2 border-gray-200 bg-white rounded-xl shadow-md p-8">
         <div className=" flex justify-start ">
           <h1 className="flex mb-2 font-semibold text-gray-800 text-4xl">
             Know Who{" "}
@@ -50,6 +51,7 @@ function About() {
             </li>
           </ul>
         </div>
+          </div>
         {/* <h2 className="text-gray-800 font-semibold leading-relaxed">📌 Skills</h2> */}
         <div className=" flex justify-center items-center">
           <h1 className=" my-6 font-semibold text-gray-800 text-4xl">

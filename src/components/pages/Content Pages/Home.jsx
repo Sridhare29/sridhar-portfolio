@@ -1,20 +1,21 @@
 import React from "react";
 import mypic from "../../../assets/Sridhar_img.jpg";
 import DescriptionCard from "../../Layout/DescriptionCard";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
     const DetailsInfo = [
         { title: "Professional Journey", icon: "💼", description: "I'm a Full Stack Developer at Kanini Software Solutions, working on scalable web applications. My work involves architecting backend solutions, optimizing frontend performance, and collaborating across teams to deliver efficient and user-friendly products." },
         { title: "Personal Projects", icon: "💻", description: "Beyond my professional role, I actively explore React, Redux, and .NET Core, refining my skills in CQRS, performance optimization, and feature flag management. I'm also focused on building reusable components and enhancing application architecture for seamless user experiences. Stay tuned for my latest updates!" },
     ];
-
+    const navigate = useNavigate();
 
     return (
         <div className="min-h-screen">
             {/* Hero Section with Glassmorphism */}
             <div className="relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-r"></div>
-                <div className="container mx-auto px-6 py-12">
+                <div className="container mx-auto px-6 pb-12">
                     <div className="backdrop-blur-lg bg-white/70 rounded-3xl p-8 shadow-md">
                         <div className="flex flex-col md:flex-row items-center space-x-8">
                             {/* Profile Image with Animation */}
@@ -43,10 +44,10 @@ function Home() {
                                     exploring technologies across Web and App.
                                 </p>
                                 <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-                                    <button className="px-8 py-3 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition duration-200">
+                                    <button onClick={()=>navigate('/about')} className="px-8 py-3 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition duration-200">
                                         About Me
                                     </button>
-                                    <button className="px-8 py-3 rounded-full bg-white text-indigo-600 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition duration-200 border-2 border-indigo-600">
+                                    <button onClick={()=>navigate('/contact')} className="px-8 py-3 rounded-full bg-white text-indigo-600 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition duration-200 border-2 border-indigo-600">
                                         Get in Touch
                                     </button>
                                 </div>

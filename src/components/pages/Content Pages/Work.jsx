@@ -1,9 +1,10 @@
 import React from 'react'
+import CareerPath from '../../Layout/CareerPath '
 
 function Work() {
   return (
     <div>
-      <h1 className='flex justify-center'>Work</h1>
+      <CareerPath />
     </div>
   )
 }
