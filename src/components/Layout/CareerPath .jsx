@@ -21,7 +21,7 @@ const CareerPath = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-100 p-8">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 p-4">
       <div className="max-w-3xl mx-auto">
         <h1 className="text-4xl font-bold text-gray-800 mb-8">
           {" "}
