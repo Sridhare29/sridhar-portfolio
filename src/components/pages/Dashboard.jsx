@@ -1,12 +1,12 @@
 import React from 'react'
-import AccordionLeft from "../Layout/AccordionLeft";
+import Accordion from "../Layout/Accordion";
 import { Outlet } from "react-router-dom";
 
 const Dashboard = () => {
   return (
     <div className="flex w-full h-screen">
     {/* Common Sidebar */}
-    <AccordionLeft />
+    <Accordion />
     
     {/* Dynamic Content */}
     <div className="flex-1 p-6 bg-gray-100">
