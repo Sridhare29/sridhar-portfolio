@@ -24,9 +24,9 @@ function Accordion() {
       Maintitle: "QUICK LINKS",
       icon: "🔗"
     },
-    { title: "Twitter / X", path: "https://x.com", icon: "𝕏" },
-    { title: "LinkedIn", path: "https://linkedin.com", icon: <FaLinkedin className=" bg-white text-sky-500" /> },
-    { title: "Github", path: "https://github.com", icon: <VscGithubInverted className=" bg-white text-gray-800" /> },
+    { title: "Twitter / X", path: "https://x.com/Sridhar2920", icon: "𝕏" },
+    { title: "LinkedIn", path: "https://www.linkedin.com/in/sridhar-e-b57738202/", icon: <FaLinkedin className=" bg-white text-sky-500" /> },
+    { title: "Github", path: "https://github.com/Sridhare29", icon: <VscGithubInverted className=" bg-white text-gray-800" /> },
   ];
 
   const handleNavigation = (path) => {
