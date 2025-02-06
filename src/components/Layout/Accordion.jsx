@@ -39,7 +39,7 @@ function Accordion() {
     <motion.div 
       initial={{ x: -100, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
-      className="flex flex-col bg-white/80 backdrop-blur-md w-[20%] lg p-2 m-2"
+      className="flex flex-col bg-white backdrop-blur-md w-[20%] h-screen lg p-2 m-2"
     >
       {/* Profile Section */}
       <motion.div 
@@ -63,7 +63,7 @@ function Accordion() {
       </motion.div>
 
       {/* Accordion Links */}
-      <div className="space-y-2">
+      <div className="space-y-2 ">
         {accordionData.map((item, index) => (
           <motion.div
             key={index}
