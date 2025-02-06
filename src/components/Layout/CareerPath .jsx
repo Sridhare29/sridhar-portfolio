@@ -33,7 +33,7 @@ const CareerPath = () => {
 
         <div className="relative">
           {/* Progress Line */}
-          <div className="absolute left-8.5 top-0 bottom-0 w-0.5 bg-gradient-to-r from-blue-600 to-purple-600"></div>
+          <div className="absolute left-8.5 top-0 bottom-25 w-0.5 bg-gradient-to-r from-blue-600 to-purple-600"></div>
 
           {/* Career Positions */}
           {positions.map((position, index) => (
@@ -88,14 +88,14 @@ const getSkills = (position) => {
   switch (position) {
     case "Intern":
       return ["Basic Programming", "Version Control", "Team Collaboration"];
-    case "Junior Developer":
+    case "Junior Associate":
       return [
         "Frontend Frameworks",
         "API Integration",
         "Unit Testing",
         "Code Review",
       ];
-    case "Senior Developer":
+    case "Trainee Associate":
       return [
         "System Design",
         "Mentoring",

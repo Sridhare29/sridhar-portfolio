@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import mypic from "../../assets/Sridhar_img.jpg";
+import { FaLinkedin } from "react-icons/fa";
+import { VscGithubInverted } from "react-icons/vsc";
 
 function Accordion() {
   const navigate = useNavigate();
@@ -15,16 +17,16 @@ function Accordion() {
     { title: "About", path: "/about", icon: "👤" },
     { title: "Work", path: "/work", icon: "💼" },
     { title: "Projects", path: "/projects", icon: "🚀" },
-    { title: "Community", path: "/community", icon: "🤝" },
-    { title: "Get In Touch", path: "/contact", icon: "✉️" },
+    // { title: "Community", path: "/community", icon: "🤝" },
+    { title: "Read CV", path: "/cv", icon: "📄" },
+    { title: "Get In Touch", path: "/contact", icon: "🤝" },
     { 
       Maintitle: "QUICK LINKS",
       icon: "🔗"
     },
     { title: "Twitter / X", path: "https://x.com", icon: "𝕏" },
-    { title: "LinkedIn", path: "https://linkedin.com", icon: "💼" },
-    { title: "Github", path: "https://github.com", icon: "🐱" },
-    { title: "Read CV", path: "/cv", icon: "📄" },
+    { title: "LinkedIn", path: "https://linkedin.com", icon: <FaLinkedin className=" bg-white text-sky-500" /> },
+    { title: "Github", path: "https://github.com", icon: <VscGithubInverted className=" bg-white text-gray-800" /> },
   ];
 
   const handleNavigation = (path) => {
@@ -45,11 +47,12 @@ function Accordion() {
       <motion.div 
         whileHover={{ scale: 1.02 }}
         className="flex mb-6 justify-center w-full bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-4"
+        onClick={() => navigate("/")}
       >
-        <div className="relative group" onClick={() => navigate("/")}>
+        <div className="relative group" >
           <img 
             src={mypic} 
-            className="w-20 h-20 rounded-2xl shadow-lg transition-transform group-hover:scale-105" 
+            className="w-20 h-20 rounded-full shadow-lg transition-transform group-hover:scale-105" 
             alt="Sridhar" 
           />
           <div className="absolute inset-0 bg-blue-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />

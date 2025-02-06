@@ -7,6 +7,7 @@ import Work from "./components/pages/Content Pages/Work";
 import Projects from "./components/pages/Content Pages/Projects";
 import Community from "./components/pages/Content Pages/Community";
 import Contact from "./components/pages/Content Pages/Contact";
+import Resume from "./components/pages/Content Pages/Resume";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="work" element={<Work />} />
           <Route path="projects" element={<Projects />} />
-          <Route path="community" element={<Community />} />
+          <Route path="cv" element={<Resume />} />
           <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>

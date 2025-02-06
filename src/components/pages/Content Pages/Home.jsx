@@ -31,15 +31,15 @@ function Home() {
                             {/* Introduction Text */}
                             <div className="flex-1 space-y-6 text-center md:text-left mt-6 md:mt-0">
                                 <div className="space-y-2">
-                                    <h1 className="text-4xl md:text-5xl font-bold bg-clip-text bg-gradient-to-r from-grey-700 to-grey-600">  
+                                    <h1 className="text-2xl md:text-2xl font-semibold bg-clip-text bg-gradient-to-r from-grey-700 to-grey-600">  
                                         Hey There! 
                                         <span className="wave inline-block ml-2 animate-bounce" role="img" aria-labelledby="wave">
                                             👋🏻
                                         </span>
                                     </h1>
-                                    <h2 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Sridhar Elumalai</h2>
+                                    <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Sridhar Elumalai</h2>
                                 </div>
-                                <p className="text-lg text-gray-600 font-medium leading-relaxed">
+                                <p className="text-md text-gray-600 font-medium leading-relaxed">
                                     Full Stack Developer Advocate with 3+ years of experience
                                     exploring technologies across Web and App.
                                 </p>
