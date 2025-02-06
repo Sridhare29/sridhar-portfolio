@@ -1,11 +1,9 @@
 import React from "react";
-import mypic from "../../assets/Sridhar_img.jpg";
-import AccordionLeft from "../Layout/AccordionLeft";
+import mypic from "../../../assets/Sridhar_img.jpg";
 
 function Home() {
 return (
     <div className="flex w-full h-screen">
-        <AccordionLeft />
         <div className="flex flex-col md:flex-row items-center md:items-start p-6 w-full bg-gray-100">
             <div className="flex justify-center md:justify-start">
                 <img
