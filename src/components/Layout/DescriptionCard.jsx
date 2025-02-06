@@ -2,17 +2,13 @@ import React from 'react'
 
 function DescriptionCard(props) {
   return (
-    <div className='flex flex-col h-[100%] w-[50%] border-2 border-gray-300 bg-white rounded-lg p-4'>
-     <div className='flex justify-between pb-2'>
-     <h1 className='text-2xl font-sans font-bold'>
-            {props.title}
-      </h1>
-      <span className='flex'>
-        {props.Icon}
-      </span>
-     </div>
-      <p className='flex '>{props.description}</p>
+    <div className="group bg-white rounded-3xl p-6 shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+    <div className="flex items-center justify-between mb-4">
+        <h3 className="text-2xl font-bold text-gray-800">{props.title}</h3>
+        <span className="text-4xl group-hover:scale-125 transition duration-300">{props.icon}</span>
     </div>
+    <p className="text-gray-600 leading-relaxed">{props.description}</p>
+</div>
   )
 }
 
