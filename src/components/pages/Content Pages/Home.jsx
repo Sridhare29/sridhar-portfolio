@@ -10,7 +10,7 @@ function Home() {
 
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
+        <div className="min-h-screen">
             {/* Hero Section with Glassmorphism */}
             <div className="relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-r"></div>
@@ -36,7 +36,7 @@ function Home() {
                                             👋🏻
                                         </span>
                                     </h1>
-                                    <h2 className="text-3xl font-bold text-gray-800">Sridhar Elumalai</h2>
+                                    <h2 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Sridhar Elumalai</h2>
                                 </div>
                                 <p className="text-lg text-gray-600 font-medium leading-relaxed">
                                     Full Stack Developer Advocate with 3+ years of experience

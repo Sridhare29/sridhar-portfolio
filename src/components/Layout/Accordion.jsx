@@ -39,7 +39,7 @@ function Accordion() {
     <motion.div 
       initial={{ x: -100, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
-      className="flex flex-col bg-white/80 backdrop-blur-md w-[20%] lg p-6 m-4"
+      className="flex flex-col bg-white/80 backdrop-blur-md w-[20%] lg p-2 m-2"
     >
       {/* Profile Section */}
       <motion.div 
