@@ -10,10 +10,10 @@ function Accordion() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   const accordionData = [
-    { 
-      Maintitle: "EXPLORE",
-      icon: "🧭"
-    },
+    // { 
+    //   Maintitle: "EXPLORE",
+    //   icon: "🧭"
+    // },
     { title: "About", path: "/about", icon: "👤" },
     { title: "Work", path: "/work", icon: "💼" },
     { title: "Projects", path: "/projects", icon: "🚀" },
@@ -21,7 +21,7 @@ function Accordion() {
     { title: "Read CV", path: "/cv", icon: "📄" },
     { title: "Get In Touch", path: "/contact", icon: "🤝" },
     { 
-      Maintitle: "QUICK LINKS",
+      Maintitle: "Social LINKS",
       icon: "🔗"
     },
     { title: "Twitter / X", path: "https://x.com/Sridhar2920", icon: "𝕏" },
