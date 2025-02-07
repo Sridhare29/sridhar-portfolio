@@ -1,13 +1,13 @@
-import Home from "./components/pages/Content Pages/Home";
+import Home from "./components/pages/Dashboard/Home";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import About from "./components/pages/Content Pages/About";
-import Dashboard from "./components/pages/Dashboard";
-import Work from "./components/pages/Content Pages/Work";
-import Projects from "./components/pages/Content Pages/Projects";
-import Community from "./components/pages/Content Pages/Community";
-import Contact from "./components/pages/Content Pages/Contact";
-import Resume from "./components/pages/Content Pages/Resume";
+import About from "./components/pages/Dashboard/About";
+import Dashboard from "./components/pages";
+import Work from "./components/pages/Dashboard/Work";
+import Projects from "./components/pages/Dashboard/Projects";
+import Community from "./components/pages/Dashboard/Community";
+import Contact from "./components/pages/Dashboard/Contact";
+import Resume from "./components/pages/Dashboard/Resume";
 
 function App() {
   return (
