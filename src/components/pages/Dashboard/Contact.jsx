@@ -1,11 +1,90 @@
-import React from 'react'
+import { FaGithub, FaTwitter, FaLinkedin, FaCoffee } from 'react-icons/fa';
+import { BsTwitterX } from "react-icons/bs";
+import { HiMail } from 'react-icons/hi';
+import { motion } from 'framer-motion';
 
-function Contact() {
+const Contact = () => {
+  const socialLinks = [
+    { icon: <FaGithub className='text-black' />, label: 'GitHub', url: 'https://github.com/Sridhare29' },
+    { icon: <FaLinkedin className='text-blue-700'/>, label: 'LinkedIn', url: 'https://www.linkedin.com/in/sridhar-e-b57738202/' },
+    { icon: <BsTwitterX className='text-gray-800'/>, label: 'X', url: 'https://x.com/Sridhar2920' },
+  ];
+
   return (
-    <div>
-      <h1 className='flex justify-center'>Contact</h1>
-    </div>
-  )
-}
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 py-20 px-4">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl p-8"
+      >
+        <h1 className="text-4xl font-bold text-center mb-8 bg-gradient-to-r from-purple-600 to-pink-600 text-transparent bg-clip-text">
+          Let's Connect!
+        </h1>
 
-export default Contact
+        <p className="text-gray-600 text-center text-lg mb-12">
+          Whether you have a burning question, a nifty project, or just want to say hello, 
+          I'm always up for a chat. Let's build something awesome together!
+        </p>
+
+        {/* Email Section */}
+        <motion.div 
+          whileHover={{ scale: 1.02 }}
+          className="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-xl mb-8"
+        >
+          <div className="flex items-center justify-center gap-3 text-xl">
+            <HiMail className="text-purple-600" />
+            <a href="mailto:vanshikar.0817@gmail.com" 
+               className="text-gray-700 hover:text-purple-600 transition-colors">
+              sridhare296@gmail.com
+            </a>
+          </div>
+        </motion.div>
+
+        {/* Social Links */}
+        <div className="grid grid-cols-3 gap-4 mb-12">
+          {socialLinks.map((link, index) => (
+            <motion.a
+              key={index}
+              href={link.url}
+              whileHover={{ scale: 1.05 }}
+              className="flex flex-col items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+            >
+             <div className="bg-white rounded-3xl p-2 shadow-md flex items-center justify-center">
+              <span className="text-2xl text-gray-700">{link.icon}</span>
+            </div>
+              <span className="mt-2 text-sm text-gray-600">{link.label}</span>
+            </motion.a>
+          ))}
+        </div>
+
+        {/* Fun Fact */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+          className="bg-white shadow-lg transition-shadow p-6 rounded-xl"
+        >
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <FaCoffee className="text-2xl text-yellow-400" />
+            <h3 className="text-xl font-semibold">Fun Fact</h3>
+          </div>
+          <p className="text-center text-gray-300">
+          Fueled by coffee & creativity, I love exploring web, app development, and bold ideas! 🚀
+          </p>
+        </motion.div>
+
+        {/* Back to Home */}
+        <motion.div 
+          whileHover={{ x: -5 }}
+          className="mt-8 text-center"
+        >
+          <a href="/" className="text-purple-600 hover:text-purple-800 transition-colors">
+            ← Back to Home
+          </a>
+        </motion.div>
+      </motion.div>
+    </div>
+  );
+};
+
+export default Contact;

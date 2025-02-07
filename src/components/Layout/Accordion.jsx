@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import mypic from "../../assets/Sridhar_img.jpg";
-import { FaLinkedin } from "react-icons/fa";
+import { FaLinkedin , FaYoutube } from "react-icons/fa";
 import { VscGithubInverted } from "react-icons/vsc";
 
 function Accordion() {
@@ -21,12 +21,13 @@ function Accordion() {
     { title: "Read CV", path: "/cv", icon: "📄" },
     { title: "Get In Touch", path: "/contact", icon: "🤝" },
     { 
-      Maintitle: "Social LINKS",
+      Maintitle: "SOCIAL LINKS",
       icon: "🔗"
     },
     { title: "Twitter / X", path: "https://x.com/Sridhar2920", icon: "𝕏" },
     { title: "LinkedIn", path: "https://www.linkedin.com/in/sridhar-e-b57738202/", icon: <FaLinkedin className=" bg-white text-sky-500" /> },
     { title: "Github", path: "https://github.com/Sridhare29", icon: <VscGithubInverted className=" bg-white text-gray-800" /> },
+    { title: "YouTube", path: "https://www.youtube.com/@codenuts29", icon: <FaYoutube className=" bg-white text-red-600" /> },
   ];
 
   const handleNavigation = (path) => {
