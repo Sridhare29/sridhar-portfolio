@@ -1,6 +1,7 @@
 import React from 'react'
 import Accordion from "../Layout/Accordion";
 import { Outlet } from "react-router-dom";
+import Footer from './Dashboard/Footer';
 
 const Dashboard = () => {
   return (
@@ -11,6 +12,7 @@ const Dashboard = () => {
     {/* Dynamic Content */}
     <div className="flex-1 p-4 bg-gradient-to-b from-gray-50 to-gray-100">
       <Outlet />
+      <Footer />
     </div>
   </div>
 
