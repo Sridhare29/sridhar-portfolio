@@ -11,7 +11,7 @@ import Resume from "./components/pages/Dashboard/Resume";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/sridhar-portfolio">
       <Routes>
         <Route path="/" element={<Dashboard />}>
           <Route index element={<Home />} />
