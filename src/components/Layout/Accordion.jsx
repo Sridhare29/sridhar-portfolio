@@ -4,46 +4,18 @@ import { motion } from "framer-motion";
 import mypic from "../../assets/Sridhar_img.jpg";
 import { FaLinkedin, FaYoutube } from "react-icons/fa";
 import { VscGithubInverted } from "react-icons/vsc";
+import { FiMenu } from "react-icons/fi"; 
 
-function Accordion() {
+function Accordion({ isVisible, onClose }) {
   const navigate = useNavigate();
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   const accordionData = [
-    // {
-    //   Maintitle: "EXPLORE",
-    //   icon: "🧭"
-    // },
     { title: "About", path: "/about", icon: "👤" },
     { title: "Work", path: "/work", icon: "💼" },
     { title: "Projects", path: "/projects", icon: "🚀" },
-    // { title: "Community", path: "/community", icon: "🤝" },
     { title: "Read CV", path: "/cv", icon: "📄" },
     { title: "Get In Touch", path: "/contact", icon: "🤝" },
-    // {
-    //   Maintitle: "SOCIAL LINKS",
-    //   icon: "🔗"
-    // },
-    // {
-    //   socialTitle: "Twitter / X",
-    //   path: "https://x.com/Sridhar2920",
-    //   icon: "𝕏",
-    // },
-    // {
-    //   socialTitle: "LinkedIn",
-    //   path: "https://www.linkedin.com/in/sridhar-e-b57738202/",
-    //   icon: <FaLinkedin className=" bg-white text-sky-500" />,
-    // },
-    // {
-    //   socialTitle: "Github",
-    //   path: "https://github.com/Sridhare29",
-    //   icon: <VscGithubInverted className=" bg-white text-gray-800" />,
-    // },
-    // {
-    //   socialTitle: "YouTube",
-    //   path: "https://www.youtube.com/@codenuts29",
-    //   icon: <FaYoutube className=" bg-white text-red-600" />,
-    // },
   ];
 
   const handleNavigation = (path) => {
@@ -51,6 +23,7 @@ function Accordion() {
       window.open(path, "_blank");
     } else {
       navigate(path);
+      onClose(); // Close the accordion on small screens after navigation
     }
   };
 
@@ -58,7 +31,9 @@ function Accordion() {
     <motion.div
       initial={{ x: -100, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
-      className="flex flex-col bg-white backdrop-blur-md w-[20%] h-screen lg p-2 m-2"
+      className={` flex flex-col bg-white backdrop-blur-md w-[40%] lg:w-[20%] h-screen p-2 m-2 ${
+        isVisible ? "block" : "hidden lg:block"
+      }`}
     >
       {/* Profile Section */}
       <motion.div
@@ -85,7 +60,7 @@ function Accordion() {
       </motion.div>
 
       {/* Accordion Links */}
-      <div className="space-y-2 ">
+      <div className="space-y-2">
         {accordionData.map((item, index) => (
           <motion.div
             key={index}
