@@ -10,7 +10,7 @@ const Dashboard = () => {
     <Accordion />
     
     {/* Dynamic Content */}
-    <div className="flex-1 p-4 bg-gradient-to-b from-gray-50 to-gray-100">
+    <div className="w-full h-full  bg-gradient-to-b from-gray-50 to-gray-100">
       <Outlet />
       <Footer />
     </div>

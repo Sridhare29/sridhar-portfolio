@@ -6,72 +6,75 @@ const CareerPath = () => {
     {
       title: "Junior Associate",
       years: "1-3 years",
-      company: "Kanini Software Solutions | Aug 2023 - Present ",
+      company: "Kanini Software Solutions | Aug 2023 - Present",
+      description: "Developing full-stack applications using .NET Core and React. Collaborating in Agile teams to deliver scalable, high-performance solutions.",
     },
     {
       title: "Trainee Associate",
-      years: "3+ years",
-      company: "Kanini Software Solutions | Aug 2022 - Aug 2023 ",
+      years: "1 year",
+      company: "Kanini Software Solutions | Aug 2022 - Aug 2023",
+      description: "Worked on Omnia Audit, developing scalable applications with .NET Core, React, and Redux. Focused on performance optimization and API integrations.",
     },
     {
       title: "Intern",
-      years: "0-1 years",
-      company: "Kanini Software Solutions | Jul 2022 - Aug 2022 ",
+      years: "0-4 Months",
+      company: "Kanini Software Solutions | Jul 2022 - Aug 2022",
+      description: "Gained hands-on experience with .NET Core and React. Learned version control, team collaboration, and best practices in software development.",
     },
   ];
+  
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 p-4">
-      <div className="max-w-3xl mx-auto">
-        <h1 className="text-4xl font-bold text-gray-800 mb-8">
-          {" "}
-          <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            Professional{" "}
-          </span>
-          Journey
-        </h1>
+    <div className="max-w-8xl bg-gradient-to-b from-gray-50 to-gray-100 mx-auto p-6">
+      <h2 className="text-3xl font-bold text-center mb-8">
+        <span className="text-blue-500">Professional</span> Journey
+      </h2>
 
-        <div className="relative">
-          {/* Progress Line */}
-          <div className="absolute left-8.5 top-0 bottom-25 w-0.5 bg-gradient-to-r from-blue-600 to-purple-600"></div>
+      <div className="relative">
+        {/* Progress Line */}
+        <div className="absolute left-5 h-full w-1 bg-gray-300"></div>
 
-          {/* Career Positions */}
+        {/* Career Positions */}
+        <div className="space-y-8">
           {positions.map((position, index) => (
-            <div
-              key={position.title}
-              className="relative flex items-center mb-12"
-            >
+            <div key={index} className="flex items-start">
               {/* Circle Marker */}
-              <div className="absolute left-8.5 transform -translate-x-1/2">
-                <div className="w-4 h-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"></div>
+              <div className="relative z-10">
+                <div className="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center">
+                  <CgWorkAlt className="text-white text-xl" />
+                </div>
               </div>
 
               {/* Content Box */}
-              <div className="ml-16 bg-white rounded-lg shadow-lg p-6 w-full">
-                <h2 className="text-xl font-semibold text-gray-800 mb-2">
-                  {position.title}
-                </h2>
-                <h2 className="text-md font-medium text-gray-500 mb-2 flex items-center gap-2">
-                  <CgWorkAlt />
-                  {position.company}
-                </h2>
-
-                <p className="text-gray-600">Experience: {position.years}</p>
-
-                {/* Skills Section */}
-                <div className="mt-4">
-                  <h3 className="text-sm font-medium text-gray-700 mb-2">
-                    Key Skills:
+              <div className="ml-6 flex-1">
+                <div className="bg-white p-6 rounded-lg shadow-md">
+                  <h3 className="text-xl font-semibold text-gray-800">
+                    {position.title}
                   </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {getSkills(position.title).map((skill, i) => (
-                      <span
-                        key={i}
-                        className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full"
-                      >
-                        {skill}
-                      </span>
-                    ))}
+                  <p className="text-gray-600 mt-1">{position.company}</p>
+                  <p className="text-gray-700 mt-2">{position.description}</p>
+
+                  <div className="mt-4">
+                    <p className="text-sm text-gray-500">
+                      Experience: {position.years}
+                    </p>
+                  </div>
+
+                  {/* Skills Section */}
+                  <div className="mt-4">
+                    <h4 className="text-sm font-medium text-gray-700">
+                      Key Skills:
+                    </h4>
+                    <div className="flex flex-wrap gap-2 mt-2">
+                      {getSkills(position.title).map((skill, i) => (
+                        <span
+                          key={i}
+                          className="px-3 py-1 bg-gray-100 text-sm text-gray-700 rounded-full"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -83,25 +86,26 @@ const CareerPath = () => {
   );
 };
 
-// Helper function to get skills based on position
 const getSkills = (position) => {
   switch (position) {
     case "Intern":
-      return ["Basic Programming", "Version Control", "Team Collaboration"];
+      return ["C#", "Js", "Git",  "Team Collaboration"];
     case "Junior Associate":
       return [
-        "Frontend Frameworks",
-        "API Integration",
+        ".Net Core",
+        "Microservices & Micro Frontends",
+        "Azure",
         "Unit Testing",
         "Code Review",
       ];
     case "Trainee Associate":
       return [
-        "System Design",
-        "Mentoring",
+        "Asp .Net Core",
+        "React js",
+        "Redux",
         "Architecture",
-        "Technical Leadership",
-        "Project Planning",
+        "Agile Methodologies",
+        "Xamarin",
       ];
     default:
       return [];
