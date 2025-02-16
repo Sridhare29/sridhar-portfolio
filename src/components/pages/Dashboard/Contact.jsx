@@ -91,7 +91,7 @@ const Contact = () => {
         {/* Back to Home */}
         <motion.div whileHover={{ x: -5 }} className="mt-8 text-center">
           <a
-            href="/"
+            href="/sridhar-portfolio"
             className="text-purple-600 hover:text-purple-800 transition-colors"
           >
             ← Back to Home
