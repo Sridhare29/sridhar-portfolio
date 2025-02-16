@@ -53,7 +53,7 @@ const Home = () => {
                       </span>
                     </h2>
                   </div>
-                  <p className="text-lg text-gray-600 max-w-2xl">
+                  <p className="text-lg font-mono text-gray-600 max-w-2xl">
                   Full Stack Developer Associate with 3 years of experience in web and app development, exploring and implementing diverse technologies for scalable solutions.</p>
                 </div>
 
