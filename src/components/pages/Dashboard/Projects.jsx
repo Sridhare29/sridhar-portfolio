@@ -5,22 +5,22 @@ function Projects() {
   const projects = [
     {
       title: "Miniti-Scrap",
-      techStack: ["React js", "Redux", "Api", "Tailwind CSS"],
-      description: "A platform to Recycle. Earn. Impact. Transform Waste | Earn Instantly | Save Planet!",
+      techStack: ["React js", "Redux", "API", "Tailwind CSS"],
+      description: "Recycle. Earn. Impact. Transform waste, earn rewards, and save the planet! 🌍",
       projectLink: "https://github.com/Sridhare29/miniti/"
     },
     {
       title: "Miniti-BE",
-      techStack: [".NetCore", "API", "Dapper", "Ms Sql"],
-      description: "A platform to Recycle. Earn. Impact. Transform Waste | Earn Instantly | Save Planet!",
+      techStack: [".NetCore", "API", "Dapper", "MS SQL"],
+      description: "Backend for Miniti: Powering waste recycling with .NET Core and seamless APIs. 💻",
       projectLink: "https://github.com/Sridhare29/Minati-Ecommerce"
     },
-    // {
-    //   title: "Toonify",
-    //   techStack: ["LemmeBuild", "API", "Next.js", "Tailwind CSS"],
-    //   description: "A platform to unleash your creativity and watch as AI brings your wildest comic ideas to life!",
-    //   projectLink: "#"
-    // },
+    {
+      title: "My-Portfolio",
+      techStack: ["Vue", "React", "Tailwind CSS"],
+      description: "A sleek, responsive portfolio showcasing my skills and projects. 🚀",
+      projectLink: "https://github.com/Sridhare29/sridhar-portfolio"
+    },
   ];
 
   return (
