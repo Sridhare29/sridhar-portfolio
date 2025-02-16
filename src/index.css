@@ -22,3 +22,7 @@
   transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
   display: inline-block;
 }
+.icon{
+  width: 20px;
+  height: 20px;
+}
