@@ -21,7 +21,7 @@ function About() {
           </strong>
         </h1>
         <p className="text-gray-600 mt-2 font-medium">
-          🎓 B.E. Electronics & Communication • 💡 Tech Innovator • 🛠 Full Stack Developer • ✈️ Traveler
+          🎓 B.E. Electronics & Communication Engineering • 💡 Tech Innovator • 🛠 Full Stack Developer • ✈️ Traveler
         </p>
       </div>
 
