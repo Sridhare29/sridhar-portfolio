@@ -3,72 +3,73 @@ import mypic from "../../../assets/Sridhar_img.jpg";
 import DescriptionCard from "../../Layout/DescriptionCard";
 import { useNavigate } from "react-router-dom";
 
-function Home() {
-  const DetailsInfo = [
-    {
-      title: "Professional Journey",
-      icon: "💼",
-      description:
-        "I'm a Full Stack Developer at Kanini Software Solutions, working on scalable web applications. My work involves architecting backend solutions, optimizing frontend performance, and collaborating across teams to deliver efficient and user-friendly products.",
-    },
-    {
-      title: "Personal Projects",
-      icon: "💻",
-      description:
-        "Beyond my professional role, I actively explore React, Redux, and .NET Core, refining my skills in CQRS, performance optimization, and feature flag management. I'm also focused on building reusable components and enhancing application architecture for seamless user experiences. Stay tuned for my latest updates!",
-    },
+const Home = () => {
+
+  const skills = [
+    { name: "Frontend", level: 90, color: "from-blue-500 to-cyan-500" },
+    { name: "Backend", level: 85, color: "from-purple-500 to-pink-500" },
+    { name: "Mobile Development", level: 75, color: "from-green-500 to-emerald-500" },
+    { name: "UI Design", level: 80, color: "from-orange-500 to-yellow-500" }
+];
+
+  const achievements = [
+    "worked on a scalable microservices and micro frontend architecture",
+    "Handled both frontend and backend for a full-stack project, making sure everything ran smoothly from UI to database",
+    "Make the development and fix in UAT and Production environment",
+    "Developed a scalable and maintainable codebase",
   ];
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Section with Glassmorphism */}
-      <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r"></div>
-        <div className="container mx-auto px-6 pb-12">
-          <div className="backdrop-blur-lg bg-white/70 rounded-3xl p-8 shadow-md">
-            <div className="flex flex-col md:flex-row items-center space-x-8">
-              {/* Profile Image with Animation */}
-              <div className="relative">
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-400 to-purple-400 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
+      <div className="max-w-6xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+        {/* Hero Section */}
+        <div className="relative mb-16">
+          <div className="absolute inset-0 bg-blue-50 rounded-3xl transform -skew-y-2" />
+          <div className="relative backdrop-blur-xl bg-white/90 rounded-3xl p-8 shadow-xl">
+            <div className="flex flex-col items-center lg:flex-row lg:justify-between lg:space-x-12">
+              {/* Profile Image */}
+              <div className="relative w-64 h-64 mb-8 lg:mb-0 flex-shrink-0">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full animate-pulse opacity-25" />
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full blur-lg opacity-25 animate-pulse delay-100" />
                 <img
                   src={mypic}
-                  className="relative w-48 h-48 md:w-64 md:h-64 rounded-2xl object-cover shadow-lg transform hover:scale-105 transition duration-500"
+                  className="relative w-full h-full rounded-2xl object-cover shadow-2xl transform hover:scale-105 transition duration-500 ease-in-out border-4 border-white"
                   alt="Sridhar"
                 />
               </div>
 
-              {/* Introduction Text */}
-              <div className="flex-1 space-y-6 text-center md:text-left mt-6 md:mt-0">
-                <div className="space-y-2">
-                  <h1 className="text-2xl md:text-2xl font-semibold bg-clip-text bg-gradient-to-r from-grey-700 to-grey-600">
-                    Hey There!
-                    <span
-                      className="wave inline-block ml-2 animate-bounce"
-                      role="img"
-                      aria-labelledby="wave"
-                    >
-                      👋🏻
-                    </span>
-                  </h1>
-                  <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                    Sridhar Elumalai
-                  </h2>
+              {/* Introduction */}
+              <div className="flex-1 text-center lg:text-left">
+                <div className="space-y-4 mb-8">
+                  <div className="inline-block">
+                    <h1 className="text-3xl font-bold text-gray-800 mb-2">
+                      Hey There!
+                      <span className="inline-block ml-2 animate-bounce">👋🏻</span>
+                    </h1>
+                    <h2 className="text-5xl font-extrabold">
+                      <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                        Sridhar Elumalai
+                      </span>
+                    </h2>
+                  </div>
+                  <p className="text-lg text-gray-600 max-w-2xl">
+                    Full Stack Developer Advocate with 3+ years of experience
+                    exploring technologies across Web and App.
+                  </p>
                 </div>
-                <p className="text-md text-gray-600 font-medium leading-relaxed">
-                  Full Stack Developer Advocate with 3+ years of experience
-                  exploring technologies across Web and App.
-                </p>
-                <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+
+                {/* CTA Buttons */}
+                <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
                   <button
                     onClick={() => navigate("/about")}
-                    className="px-8 py-3 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition duration-200"
+                    className="px-8 py-3 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 hover:scale-105"
                   >
                     About Me
                   </button>
                   <button
                     onClick={() => navigate("/contact")}
-                    className="px-8 py-3 rounded-full bg-white text-indigo-600 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition duration-200 border-2 border-indigo-600"
+                    className="px-8 py-3 rounded-full bg-white text-blue-600 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 hover:scale-105 border-2 border-blue-600"
                   >
                     Get in Touch
                   </button>
@@ -77,27 +78,53 @@ function Home() {
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Info Cards Section */}
-      <div className="container bg-gradient-to-b from-gray-50 to-gray-100 mx-auto px-6 pb-4">
-        <div className="text-center mb-4">
-          <h2 className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent ">
-            Exploring My <span className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Digital Universe</span>
-            <span className="block text-sm font-normal text-gray-400 mt-2">
-              Discover the building blocks of my journey
-            </span>
-          </h2>
-        </div>
+        {/* New Content Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+          {/* Skills Section */}
+          <div className="bg-white rounded-2xl p-8 shadow-xl">
+            <h3 className="text-2xl font-bold text-gray-800 mb-6">Technical Expertise</h3>
+            <div className="space-y-6">
+              {skills.map((skill, index) => (
+                <div key={index} className="space-y-2">
+                  <div className="flex justify-between">
+                    <span className="font-medium text-gray-700">{skill.name}</span>
+                    <span className="text-gray-500">{skill.level}%</span>
+                  </div>
+                  <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
+                    <div 
+                      className={`h-full bg-gradient-to-r ${skill.color} transition-all duration-500`}
+                      style={{ width: `${skill.level}%` }}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {DetailsInfo.map((info, index) => (
-            <DescriptionCard key={index} {...info} />
-          ))}
+          {/* Achievements Section */}
+          <div className="bg-white rounded-2xl p-8 shadow-xl">
+            <h3 className="text-2xl font-bold text-gray-800 mb-6">Key Achievements</h3>
+            <div className="grid gap-4">
+              {achievements.map((achievement, index) => (
+                <div 
+                  key={index}
+                  className="flex items-center p-4 bg-gray-50 rounded-xl hover:shadow-md transition-all duration-300"
+                >
+                  <div className="mr-4">
+                    <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold">
+                      {index + 1}
+                    </div>
+                  </div>
+                  <p className="text-gray-700">{achievement}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default Home;

@@ -26,6 +26,8 @@ const ProjectCard = ({ title, techStack, description, projectLink }) => {
 
       <a
         href={projectLink}
+        target="_blank" 
+        rel="noopener noreferrer"
         className=" items-center text-blue-600 hover:text-blue-800 transition duration-300  group-hover:border-blue-600 group-hover:flex hidden"
       >
         View Project

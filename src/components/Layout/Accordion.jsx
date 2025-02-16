@@ -31,14 +31,14 @@ function Accordion({ isVisible, onClose }) {
     <motion.div
       initial={{ x: -100, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
-      className={` flex flex-col bg-white backdrop-blur-md w-[40%] lg:w-[20%] h-screen p-2 m-2 ${
+      className={` flex flex-col bg-white backdrop-blur-md w-[40%] lg:w-[22%] h-screen m-4 ${
         isVisible ? "block" : "hidden lg:block"
       }`}
     >
       {/* Profile Section */}
       <motion.div
         whileHover={{ scale: 1.02 }}
-        className="flex mb-6 justify-center w-full bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-4"
+        className="flex mb-6 justify-center w-full bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl px-0.5 py-2"
         onClick={() => navigate("/")}
       >
         <div className="relative group">
@@ -50,7 +50,7 @@ function Accordion({ isVisible, onClose }) {
           <div className="absolute inset-0 bg-blue-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
         </div>
         <div className="flex flex-col justify-center ml-4">
-          <h1 className="text-xl font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          <h1 className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
             Sridhar Elumalai
           </h1>
           <p className="text-gray-600 font-mono text-sm">
