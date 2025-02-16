@@ -37,27 +37,30 @@ function Accordion({ isVisible, onClose }) {
     >
       {/* Profile Section */}
       <motion.div
-        whileHover={{ scale: 1.02 }}
-        className="flex mb-6 justify-center w-full bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl px-0.5 py-2"
-        onClick={() => navigate("/")}
-      >
-        <div className="relative group">
-          <img
-            src={mypic}
-            className="w-20 h-20 rounded-full shadow-lg transition-transform group-hover:scale-105"
-            alt="Sridhar"
-          />
-          <div className="absolute inset-0 bg-blue-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
-        </div>
-        <div className="flex flex-col justify-center ml-4">
-          <h1 className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            Sridhar Elumalai
-          </h1>
-          <p className="text-gray-600 font-mono text-sm">
-            Full Stack Developer
-          </p>
-        </div>
-      </motion.div>
+  whileHover={{ scale: 1.02 }}
+  className="flex mb-6 justify-center w-full bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl px-2 py-4 sm:px-0.5 sm:py-2"
+  onClick={() => navigate("/")}
+>
+  <div className="relative group flex items-center sm:items-start">
+    {/* Profile Picture */}
+      <img
+        src={mypic}
+        className="w-16 h-16 sm:w-20 sm:h-20 rounded-full shadow-lg transition-transform group-hover:scale-105"
+        alt="Sridhar"
+      />
+      <div className="absolute inset-0 bg-blue-500/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+    </div>
+
+    {/* Name and Title */}
+    <div className="flex flex-col justify-center ml-4">
+      <h1 className="text-lg sm:text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+        Sridhar Elumalai
+      </h1>
+      <p className="text-gray-600 font-mono text-xs sm:text-sm">
+        Full Stack Developer
+      </p>
+  </div>
+</motion.div>
 
       {/* Accordion Links */}
       <div className="space-y-2">
