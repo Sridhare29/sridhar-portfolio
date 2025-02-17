@@ -45,7 +45,7 @@ function Accordion({ isVisible, onClose }) {
     {/* Profile Picture */}
       <img
         src={mypic}
-        className="w-16 h-16 sm:w-20 sm:h-20 rounded-full shadow-lg transition-transform group-hover:scale-105"
+        className="w-14 h-14 xs:w-16 xs:h-16 rounded-full shadow-lg transition-transform group-hover:scale-105 object-cover"
         alt="Sridhar"
       />
       <div className="absolute inset-0 bg-blue-500/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -56,8 +56,8 @@ function Accordion({ isVisible, onClose }) {
       <h1 className="text-lg sm:text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
         Sridhar Elumalai
       </h1>
-      <p className="text-gray-600 font-mono text-xs sm:text-sm">
-        Full Stack Developer
+      <p className="text-[10px] xs:text-xs sm:text-sm text-gray-600 font-mono">
+      Full Stack Developer
       </p>
   </div>
 </motion.div>
