@@ -1,31 +1,44 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { FiMenu } from "react-icons/fi";
+import { IoMdClose } from "react-icons/io";
 import Accordion from "../Layout/Accordion";
 import { Outlet } from "react-router-dom";
 import Footer from './Dashboard/Footer';
-import { FiMenu } from "react-icons/fi"; // Menu icon for small screens
 
 const Dashboard = () => {
-  const [isAccordionVisible, setIsAccordionVisible] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const toggleAccordion = () => {
-    setIsAccordionVisible(!isAccordionVisible);
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   return (
     <div className="flex w-full h-screen">
-      {/* Menu Icon for Small Screens */}
+
+      {/* Mobile Menu Button - Only visible on small screens */}
       <div
+        onClick={toggleMobileMenu}
         className="fixed top-4 left-4 z-50 lg:hidden p-2 bg-white rounded-full shadow-lg cursor-pointer"
-        onClick={toggleAccordion}
       >
-        <FiMenu className="text-2xl text-gray-600" />
+        {isMobileMenuOpen ? (
+          <IoMdClose className="w-6 h-6 text-gray-600" />
+        ) : (
+          <FiMenu className="w-6 h-6 text-gray-600" />
+        )}
       </div>
 
-      {/* Common Sidebar */}
-      <Accordion
-        isVisible={isAccordionVisible}
-        onClose={() => setIsAccordionVisible(false)}
-      />
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div 
+          className="fixed inset-0  bg-opacity-50 z-40 lg:hidden"
+          onClick={toggleMobileMenu}
+        />
+      )}
+
+        <Accordion 
+          isVisible={isMobileMenuOpen} 
+          onClose={() => setIsMobileMenuOpen(false)}
+        />
 
       {/* Dynamic Content */}
       <div
