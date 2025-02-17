@@ -5,23 +5,30 @@ function Projects() {
   const projects = [
     {
       title: "Miniti-Scrap",
-      techStack: ["React js", "Redux", "API", "Tailwind CSS"],
-      description: "Recycle. Earn. Impact. Transform waste, earn rewards, and save the planet! 🌍",
+      techStack: ["React.js", "Redux", "API", "Tailwind CSS"],
+      description: "An eco-friendly platform that lets you recycle waste, earn rewards, and contribute to a greener planet. 🌍",
       projectLink: "https://github.com/Sridhare29/miniti/"
     },
     {
       title: "Miniti-BE",
-      techStack: [".NetCore", "API", "Dapper", "MS SQL"],
-      description: "Backend for Miniti: Powering waste recycling with .NET Core and seamless APIs. 💻",
+      techStack: [".NET Core", "API", "Dapper", "MS SQL"],
+      description: "The backend infrastructure for Miniti, built with .NET Core to enable seamless waste recycling and rewards management. 💻",
       projectLink: "https://github.com/Sridhare29/Minati-Ecommerce"
     },
     {
-      title: "My-Portfolio",
-      techStack: ["Vue", "React", "Tailwind CSS"],
-      description: "A sleek, responsive portfolio showcasing my skills and projects. 🚀",
-      projectLink: "https://github.com/Sridhare29/sridhar-portfolio"
+      title: "Food Order App",
+      techStack: ["Flutter", "Dart", "GetIt"],
+      description: "A sleek and intuitive food ordering app designed for fast and easy meal selection. 🚀",
+      projectLink: "https://github.com/Sridhare29/FoodOrder-App/tree/dev_stage"
     },
+    {
+      title: "Miniti TO-DO",
+      techStack: ["React.js", "JavaScript", "Bootstrap"],
+      description: "A simple yet powerful to-do app built with React to help you stay organized. ✅",
+      projectLink: "https://github.com/Sridhare29/to-do-app"
+    }
   ];
+  
 
   return (
     <div className="container h-full  mx-auto p-8">
