@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { AiOutlineDownload } from "react-icons/ai";
-import cv from "../../../assets/Sridhar_FullstackDev.pdf";
+import cv from "../../../assets/SridharElumalaiFE.pdf";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
