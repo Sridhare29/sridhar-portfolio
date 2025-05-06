@@ -4,17 +4,17 @@ import { CgWorkAlt } from "react-icons/cg";
 const CareerPath = () => {
   const positions = [
     {
-      title: "Junior Associate",
-      years: "1-3 years",
-      company: "Kanini Software Solutions | Aug 2023 - Present",
+      title: "Software Engineer",
+      years: "3+ years",
+      company: "Kanini Software Solutions | Aug 2022 - Present",
       description: "Developing full-stack applications using .NET Core and React. Collaborating in Agile teams to deliver scalable, high-performance solutions.",
     },
-    {
-      title: "Trainee Associate",
-      years: "1 year",
-      company: "Kanini Software Solutions | Aug 2022 - Aug 2023",
-      description: "Worked on Omnia Audit, developing scalable applications with .NET Core, React, and Redux. Focused on performance optimization and API integrations.",
-    },
+    // {
+    //   title: "Trainee Associate",
+    //   years: "1 year",
+    //   company: "Kanini Software Solutions | Aug 2022 - Aug 2023",
+    //   description: "Worked on Omnia Audit, developing scalable applications with .NET Core, React, and Redux. Focused on performance optimization and API integrations.",
+    // },
     {
       title: "Intern",
       years: "0-4 Months",
@@ -90,22 +90,22 @@ const getSkills = (position) => {
   switch (position) {
     case "Intern":
       return ["C#", "Js", "Git",  "Team Collaboration"];
-    case "Junior Associate":
+    // case "Junior Associate":
+    //   return [
+    //     ".Net Core",
+    //     "Microservices & Micro Frontends",
+    //     "Azure",
+    //     "Unit Testing",
+    //     "Code Review",
+    //   ];
+    case "Software Engineer":
       return [
         ".Net Core",
-        "Microservices & Micro Frontends",
-        "Azure",
-        "Unit Testing",
-        "Code Review",
-      ];
-    case "Trainee Associate":
-      return [
-        "Asp .Net Core",
         "React js",
         "Redux",
-        "Architecture",
+        "Microservices & Micro Frontends",
         "Agile Methodologies",
-        "Xamarin",
+        "Azure",
       ];
     default:
       return [];
