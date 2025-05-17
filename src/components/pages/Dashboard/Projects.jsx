@@ -14,7 +14,7 @@ function Projects() {
       title: "Miniti-BE",
       techStack: [".NET Core", "API", "Dapper", "MS SQL"],
       description: "The backend infrastructure for Miniti, built with .NET Core to enable seamless waste recycling and rewards management. 💻",
-      projectLink: "https://github.com/Sridhare29/Minati-Ecommerce",
+      projectLink: "https://github.com/Sridhare29/EcommerceManagement/tree/Develop",
       deployLink: "https://miniti-scrap.vercel.app/"
     },
     {
