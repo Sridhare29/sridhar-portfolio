@@ -95,7 +95,7 @@ const Home = () => {
             mounted ? "fade-up" : "opacity-0"
           }`}
         >
-          <span>Full-Stack Developer — .NET Core / React</span>
+          <span>Code. Create. Grow.</span>
           <span className="hidden sm:inline">Chennai, India</span>
         </div>
 
