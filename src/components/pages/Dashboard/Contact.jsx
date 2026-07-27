@@ -45,10 +45,10 @@ const Contact = () => {
           <div className="flex items-center justify-center gap-3 text-xl">
             <HiMail className="text-purple-600" />
             <a
-              href="mailto:sridhare296@gmail.com"
+              href="mailto:srielumalai29@gmail.com"
               className="text-gray-700 hover:text-purple-600 font-mono transition-colors"
             >
-              sridhare296@gmail.com
+              srielumalai29@gmail.com
             </a>
           </div>
         </motion.div>

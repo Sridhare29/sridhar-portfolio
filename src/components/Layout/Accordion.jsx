@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import mypic from "../../assets/Sridhar_img.jpg";
+import mypic from "../../assets/Sridhar_NewProfile.png";
 import { FaLinkedin, FaYoutube } from "react-icons/fa";
 import { VscGithubInverted } from "react-icons/vsc";
 import { FiMenu } from "react-icons/fi"; 
