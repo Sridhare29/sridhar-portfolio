@@ -5,7 +5,7 @@ import { CgWorkAlt } from "react-icons/cg";
 const positions = [
   {
     title: "Software Engineer",
-    years: "3+ years",
+    years: "4+ years",
     company: "Kanini Software Solutions",
     period: "Aug 2022 — Present",
     description:

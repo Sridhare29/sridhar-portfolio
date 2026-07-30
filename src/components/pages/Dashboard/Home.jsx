@@ -1,7 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import mypic from "../../../assets/Sridhar_NewProfile.png";
 import { useNavigate } from "react-router-dom";
-
+import { FaReact } from "react-icons/fa";
+import { TbBrandCSharp, TbSql } from "react-icons/tb";
+import { SiDotnet } from "react-icons/si";
+import { BiLogoTypescript } from "react-icons/bi";
+import { VscAzure } from "react-icons/vsc";
 
 const Home = () => {
   const [mouse, setMouse] = useState({ x: 0.5, y: 0.5 });
@@ -37,6 +41,15 @@ const Home = () => {
     { number: "26", label: "Teams collaborated with" },
   ];
 
+  const orbitStack = [
+    { name: "React", icon: <FaReact />, color: "text-sky-500" },
+    { name: ".NET Core", icon: <SiDotnet />, color: "text-violet-700" },
+    { name: "C#", icon: <TbBrandCSharp />, color: "text-violet-500" },
+    { name: "TypeScript", icon: <BiLogoTypescript />, color: "text-sky-700" },
+    { name: "SQL Server", icon: <TbSql />, color: "text-red-500" },
+    { name: "Azure", icon: <VscAzure />, color: "text-sky-800" },
+  ];
+
   return (
     <div className="min-h-screen w-full bg-white text-[#0E0E10] relative overflow-hidden">
       {/* Google Fonts */}
@@ -69,6 +82,37 @@ const Home = () => {
           to { opacity: 1; transform: translateY(0); }
         }
         .fade-up { animation: fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) both; }
+
+        /* 3D tech orbit */
+        @keyframes orbitSpin {
+          from { transform: rotateX(14deg) rotateY(0deg); }
+          to { transform: rotateX(14deg) rotateY(360deg); }
+        }
+        .orbit-ring {
+          transform-style: preserve-3d;
+          animation: orbitSpin 22s linear infinite;
+        }
+        .orbit-item {
+          transform-style: preserve-3d;
+          backface-visibility: hidden;
+        }
+        @keyframes corePulse {
+          0%, 100% { transform: scale(1); opacity: 0.9; }
+          50% { transform: scale(1.15); opacity: 0.6; }
+        }
+        .orbit-core { animation: corePulse 3s ease-in-out infinite; }
+
+        /* scroll marker */
+        @keyframes spinSlow {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        .spin-slow { animation: spinSlow 14s linear infinite; }
+        @keyframes bobDown {
+          0%, 100% { transform: translateY(0); opacity: 0.5; }
+          50% { transform: translateY(6px); opacity: 1; }
+        }
+        .bob-down { animation: bobDown 1.6s ease-in-out infinite; }
       `}</style>
 
       {/* Ambient background: soft cobalt wash following the cursor + dot grid */}
@@ -148,7 +192,9 @@ const Home = () => {
                 Sridhar Elumalai
               </span>{" "}
               — full-stack developer building scalable APIs in .NET Core and
-              fast, type-safe front ends in React & TypeScript.
+              fast, type-safe front ends in React & TypeScript. AI-driven in
+              my workflow and quick to pick up new tech and tools as the job
+              demands.
             </p>
 
             {/* Tech pills */}
@@ -280,16 +326,69 @@ const Home = () => {
           ))}
         </div>
 
-        {/* Scroll cue */}
-        <div className="flex justify-center mt-14">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#0E0E10]/10 bg-white/50 backdrop-blur-sm font-mono text-[10px] tracking-[0.2em] text-[#6B6B72] uppercase">
-            Scroll
-            <span className="w-8 h-px bg-[#0E0E10]/30 relative overflow-hidden">
-              <span className="absolute inset-y-0 left-0 w-2 bg-gradient-to-r from-blue-600 to-purple-600 animate-pulse" />
-            </span>
+        {/* 3D Tech Orbit — the stack, spinning in space */}
+        {/* <div className="mt-24 flex flex-col items-center">
+          <div className="flex items-center gap-2 font-mono text-[11px] tracking-[0.2em] text-[#6B6B72] uppercase mb-10">
+            <span className="w-2 h-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 pulse-dot" />
+            The stack, in orbit
           </div>
-        </div>
-      </div>
+
+          <div
+            className="relative"
+            style={{
+              width: "320px",
+              height: "280px",
+              perspective: "900px",
+            }}
+          >
+            <div
+              className="orbit-core absolute rounded-full bg-gradient-to-r from-blue-600/30 to-purple-600/30 blur-xl"
+              style={{
+                width: "70px",
+                height: "70px",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+              }}
+            />
+
+            <div
+              className="orbit-ring absolute inset-0"
+              style={{ transformStyle: "preserve-3d" }}
+            >
+              {orbitStack.map((item, i) => {
+                const angle = (360 / orbitStack.length) * i;
+                return (
+                  <div
+                    key={item.name}
+                    className="orbit-item absolute flex flex-col items-center justify-center gap-1.5 rounded-2xl border border-[#0E0E10]/10 bg-white/85 backdrop-blur-lg shadow-lg shadow-[#0E0E10]/5"
+                    style={{
+                      width: "84px",
+                      height: "84px",
+                      top: "50%",
+                      left: "50%",
+                      marginTop: "-42px",
+                      marginLeft: "-42px",
+                      transform: `rotateY(${angle}deg) translateZ(150px)`,
+                    }}
+                  >
+                    <span className={`text-3xl ${item.color}`}>{item.icon}</span>
+                    <span className="font-mono text-[9px] tracking-wide text-[#6B6B72] uppercase">
+                      {item.name}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          <p className="font-body text-sm text-[#6B6B72] max-w-sm text-center mt-6 leading-relaxed">
+            Six technologies, one continuous loop — the toolkit I reach for
+            most when shipping something real.
+          </p>
+        </div> */}
+
+     </div>
     </div>
   );
 };

@@ -12,16 +12,16 @@ function Accordion({ isVisible, onClose }) {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   const accordionData = [
-    { title: "About", path: "/about", tag: "01" },
-    { title: "Work", path: "/work", tag: "02" },
-    { title: "Projects", path: "/projects", tag: "03" },
-    { title: "Read CV", path: "/cv", tag: "04" },
-    { title: "Get In Touch", path: "/contact", tag: "05" },
+    { title: "About", path: "/about" },
+    { title: "Work", path: "/work" },
+    { title: "Projects", path: "/projects" },
+    { title: "Read CV", path: "/cv" },
+    { title: "Get In Touch", path: "/contact" },
   ];
 
   const socials = [
     { icon: <VscGithubInverted />, href: "https://github.com/Sridhare29", label: "GitHub" },
-    { icon: <FaLinkedin />, href: "https://linkedin.com/in/sridhare29", label: "LinkedIn" },
+    { icon: <FaLinkedin />, href: "https://linkedin.com/in/sridhar-e-b57738202/", label: "LinkedIn" },
     { icon: <FaYoutube />, href: "https://www.youtube.com/@codenuts29/", label: "YouTube" },
     { icon: <BsTwitterX />, href: "https://x.com/Sridhar2920", label: "X" },
   ];

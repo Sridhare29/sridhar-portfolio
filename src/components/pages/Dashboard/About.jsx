@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 import { IoLogoJavascript } from "react-icons/io5";
 import { FaReact, FaGithub } from "react-icons/fa";
 import { TbBrandCSharp, TbBrandXamarin, TbSql } from "react-icons/tb";
@@ -43,36 +42,47 @@ const philosophy = [
     tag: "REUSE",
     text: "Believing in efficiency, reusability, and quiet innovation over noise.",
   },
+  {
+    tag: "ADAPT",
+    text: "AI-driven in day-to-day work — using AI tools to move faster, and quick to pick up new tech and tools as the stack evolves.",
+  },
 ];
 
-const IconGrid = ({ items }) => (
-  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
-    {items.map((item, index) => (
-      <motion.div
-        key={item.name}
-        initial={{ opacity: 0, y: 12 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.4, delay: index * 0.04 }}
-        whileHover={{ y: -4 }}
-        className="group relative flex flex-col items-center justify-center gap-2 rounded-2xl border border-[#0E0E10]/10 bg-white/60 backdrop-blur-md py-6 shadow-sm transition-colors duration-300 hover:border-purple-500/30"
+/* Full-bleed horizontal marquee — breaks out of the max-w container to use the
+   entire viewport width, and loops the item list seamlessly. */
+const MarqueeRow = ({ items, reverse = false, duration = 28 }) => {
+  const track = [...items, ...items];
+  return (
+    <div className="relative w-screen left-1/2 -translate-x-1/2 overflow-hidden">
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-32 bg-gradient-to-r from-white to-transparent z-10" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-32 bg-gradient-to-l from-white to-transparent z-10" />
+      <div
+        className="marquee-track flex w-max gap-4 px-4"
+        style={{
+          animation: `${reverse ? "marqueeReverse" : "marqueeForward"} ${duration}s linear infinite`,
+        }}
       >
-        <span className={`text-4xl sm:text-5xl ${item.color} transition-transform duration-300 group-hover:scale-110`}>
-          {item.icon}
-        </span>
-        <span className="font-mono text-[10px] tracking-wide text-[#6B6B72] uppercase">
-          {item.name}
-        </span>
-      </motion.div>
-    ))}
-  </div>
-);
+        {track.map((item, i) => (
+          <div
+            key={`${item.name}-${i}`}
+            className="flex shrink-0 items-center gap-3 rounded-2xl border border-[#0E0E10]/10 bg-white/60 backdrop-blur-md px-5 py-4 shadow-sm transition-colors duration-300 hover:border-purple-500/30"
+          >
+            <span className={`text-3xl ${item.color}`}>{item.icon}</span>
+            <span className="font-mono text-xs tracking-wide text-[#6B6B72] uppercase whitespace-nowrap">
+              {item.name}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 function About() {
   const [mounted] = useState(true);
 
   return (
-    <div className="relative min-h-screen w-full bg-white text-[#0E0E10] overflow-hidden">
+    <div className="relative min-h-screen w-full bg-white text-[#0E0E10] overflow-x-hidden">
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
         .font-display { font-family: 'Fraunces', serif; }
@@ -83,6 +93,17 @@ function About() {
         .fade-up { animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) both; }
         @keyframes pulseDot { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.35; transform: scale(0.7); } }
         .pulse-dot { animation: pulseDot 1.8s ease-in-out infinite; }
+
+        /* horizontal rotating marquee for skillset / tools */
+        @keyframes marqueeForward {
+          from { transform: translateX(0); }
+          to { transform: translateX(-50%); }
+        }
+        @keyframes marqueeReverse {
+          from { transform: translateX(-50%); }
+          to { transform: translateX(0); }
+        }
+        .marquee-track:hover { animation-play-state: paused; }
       `}</style>
 
       {/* ambient background */}
@@ -105,7 +126,7 @@ function About() {
             </span>
           </h1>
           <div className="flex flex-wrap gap-2.5">
-            {["B.E. Electronics & Communication", "Tech Innovator", "Full Stack Developer", "Traveler"].map((tag) => (
+            {["B.E. Electronics & Communication", "Tech Innovator", "Full Stack Developer", "AI-Augmented Learner", "Traveler"].map((tag) => (
               <span
                 key={tag}
                 className="font-mono text-xs px-3.5 py-1.5 rounded-full border border-[#0E0E10]/10 bg-white/70 backdrop-blur-sm text-[#3d3d42]"
@@ -124,7 +145,7 @@ function About() {
               Philosophy
             </span>
           </h2>
-          <div className="grid sm:grid-cols-3 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {philosophy.map((p) => (
               <div
                 key={p.tag}
@@ -139,7 +160,7 @@ function About() {
           </div>
         </section>
 
-        {/* Skillset */}
+        {/* Skillset — full-bleed horizontal marquee */}
         <section>
           <div className="flex items-baseline justify-between mb-6">
             <h2 className="font-display italic text-3xl sm:text-4xl">
@@ -148,12 +169,12 @@ function About() {
                 Skillset
               </span>
             </h2>
-            <span className="font-mono text-[11px] text-[#6B6B72]">{skillset.length} technologies</span>
+            {/* <span className="font-mono text-[11px] text-[#6B6B72]">{skillset.length} technologies</span> */}
           </div>
-          <IconGrid items={skillset} />
         </section>
+        <MarqueeRow items={skillset} duration={32} />
 
-        {/* Tools */}
+        {/* Tools — full-bleed horizontal marquee, opposite direction */}
         <section>
           <div className="flex items-baseline justify-between mb-6">
             <h2 className="font-display italic text-3xl sm:text-4xl">
@@ -162,10 +183,10 @@ function About() {
               </span>{" "}
               I Use
             </h2>
-            <span className="font-mono text-[11px] text-[#6B6B72]">{tools.length} in daily use</span>
+            {/* <span className="font-mono text-[11px] text-[#6B6B72]">{tools.length} in daily use</span> */}
           </div>
-          <IconGrid items={tools} />
         </section>
+        <MarqueeRow items={tools} reverse duration={24} />
 
         {/* GitHub activity */}
         <section>
@@ -191,4 +212,4 @@ function About() {
   );
 }
 
-export default About; 
+export default About;
