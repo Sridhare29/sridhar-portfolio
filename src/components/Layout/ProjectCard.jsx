@@ -1,70 +1,82 @@
-import { FaGithub, FaRocket } from "react-icons/fa";
-import { FaArrowRight, FaEye } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa";
+import { FaArrowRight, FaRocket } from "react-icons/fa6";
 import { useState } from "react";
 
 const ProjectCard = ({ title, techStack, description, projectLink, deployLink }) => {
   const [isHovering, setIsHovering] = useState(false);
-  
+
   return (
-    <div 
-      className="max-w-sm rounded-lg overflow-hidden shadow-lg bg-white p-6 border border-transparent hover:border-blue-500 transition duration-300 relative group"
+    <div
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
+      className="group relative flex flex-col h-full rounded-[1.5rem] border border-[#0E0E10]/10 bg-white/60 backdrop-blur-md p-6 shadow-sm transition-all duration-300 hover:border-purple-500/30 hover:-translate-y-1"
     >
-      <div className="flex items-center justify-between mb-4">
-        <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2">
-          {title}
-        </h2>
-        <FaGithub className="text-gray-600 text-2xl hover:text-black cursor-pointer transition-colors" />
+      {/* ambient glow on hover */}
+      <div
+        className={`absolute -bottom-10 -right-10 w-28 h-28 rounded-full bg-gradient-to-tr from-blue-600/20 to-purple-600/20 blur-2xl transition-opacity duration-500 pointer-events-none ${
+          isHovering ? "opacity-100" : "opacity-0"
+        }`}
+      />
+
+      {/* Header */}
+      <div className="relative flex items-start justify-between mb-4">
+        <h2 className="font-display italic text-xl text-[#0E0E10] pr-3">{title}</h2>
+        {projectLink && (
+          <a
+            href={projectLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View source on GitHub"
+            className="shrink-0 flex items-center justify-center w-9 h-9 rounded-full border border-[#0E0E10]/10 bg-white/70 text-[#3d3d42] transition-all duration-300 hover:border-purple-500/40 hover:text-purple-600 hover:-translate-y-0.5"
+          >
+            <FaGithub className="text-base" />
+          </a>
+        )}
       </div>
 
-      <div className="flex flex-wrap gap-2 mb-4">
-        {techStack.map((tech, index) => (
+      {/* Tech pills */}
+      <div className="relative flex flex-wrap gap-2 mb-4">
+        {techStack.map((tech) => (
           <span
-            key={index}
-            className="px-3 py-1 text-sm bg-blue-100 text-blue-800 rounded-full"
+            key={tech}
+            className="font-mono text-[11px] px-3 py-1 rounded-full border border-[#0E0E10]/10 bg-white/70 text-[#3d3d42] transition-colors duration-300 group-hover:border-purple-500/20"
           >
             {tech}
           </span>
         ))}
       </div>
 
-      <p className="text-gray-600 mb-6">{description}</p>
+      {/* Description */}
+      <p className="relative font-body text-sm text-[#3d3d42] leading-relaxed mb-6 flex-1">
+        {description}
+      </p>
 
-      <div className="flex flex-col sm:flex-row gap-3 mt-auto">
-        <a
-          href={projectLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center text-blue-600 hover:text-blue-800 transition duration-300
-                 sm:hidden group-hover:flex"
-        >
-          <span>View Code</span>
-          <FaArrowRight className="ml-2" />
-        </a>
-        
+      {/* Actions */}
+      <div className="relative flex flex-wrap items-center gap-3 mt-auto pt-2 border-t border-[#0E0E10]/10">
+        {projectLink && (
+          <a
+            href={projectLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 font-mono text-xs text-[#3d3d42] transition-colors duration-300 hover:text-purple-600"
+          >
+            View code
+            <FaArrowRight className="text-[10px] transition-transform duration-300 group-hover:translate-x-0.5" />
+          </a>
+        )}
+
         {deployLink && (
           <a
             href={deployLink}
             target="_blank"
             rel="noopener noreferrer"
-            className={`flex items-center justify-center gap-2 px-4 py-2 rounded-md bg-gradient-to-r from-purple-500 to-indigo-600 text-white font-medium transform transition-all duration-300 ${
-              isHovering ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0 sm:opacity-100 sm:translate-y-0"
-            }`}
+            className="ml-auto inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0E0E10] text-white font-body text-xs font-medium tracking-wide transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:shadow-md hover:shadow-purple-500/20"
           >
-            <FaRocket className={`transition-transform duration-300 ${isHovering ? "animate-pulse" : ""}`} />
-            <span>Live Demo</span>
-            <FaEye className={`transition-transform duration-300 ${isHovering ? "animate-bounce" : ""}`} />
+            <FaRocket className="text-[11px]" />
+            Live demo
           </a>
         )}
       </div>
-      
-      {/* Decorative element that appears on hover */}
-      <div 
-        className={`absolute -bottom-10 -right-10 w-20 h-20 bg-gradient-to-tr from-purple-300/30 to-blue-300/30 rounded-full blur-md transition-opacity duration-500 ${
-          isHovering ? "opacity-100" : "opacity-0"
-        }`} 
-      />
     </div>
   );
 };
